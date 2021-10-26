@@ -22,7 +22,8 @@ public class ProdutoRepositoryTests {
 				"Coca-Cola",
 				Byte.valueOf("15"),
 				BigDecimal.valueOf(10.50),
-				LocalDate.of(2021, 11, 23)
+				LocalDate.of(2021, 11, 23),
+				null
 			);
 		
 		Produto p2 = new Produto(
@@ -30,7 +31,8 @@ public class ProdutoRepositoryTests {
 				"Heineken",
 				Byte.valueOf("23"),
 				BigDecimal.valueOf(8.00),
-				LocalDate.of(2022, 4, 1)
+				LocalDate.of(2022, 4, 1),
+				null
 			);
 		
 		produtoRepository.save(p1);

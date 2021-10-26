@@ -18,12 +18,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 public class Produto {
-	//@id diz que será chave primaria e @generated gera codigos automaticos
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Short codigo;
 	
-	//nullable=false, significa obrigatorio,e unique=true significa que o nome não pode ser repetido
+	
 	@Column(length = 50, nullable = false, unique = true)
 	private String nome;
 	

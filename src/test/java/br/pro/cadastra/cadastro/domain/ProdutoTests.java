@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class ProdutoTests {
 	@Test
 	public void criar() {
-		Produto p = new Produto(
+		/*Produto p = new Produto(
 				Short.valueOf("1"),
 				"Coca-Cola",
 				Byte.valueOf("15"),
@@ -19,7 +19,7 @@ public class ProdutoTests {
 				null
 				);
 		
-				System.out.println(p);
+				System.out.println(p);*/
 		}
 
 }

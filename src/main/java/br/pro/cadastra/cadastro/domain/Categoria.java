@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Categoria {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Byte codigo;
+	private Short codigo;
 	
 	@Column(length = 50, nullable = false, unique = true)
 	private String nome;

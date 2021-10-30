@@ -42,24 +42,22 @@ public class CategoriaController {
 		}
 	}
 	
-//	@PostMapping
-//	public Categoria inserir (@RequestBody Categoria categoria) {
-//		Categoria categoriaSalva = categoriaRepository.save(categoria);
-//		return categoriaSalva;
-//	}
-//	
-//	@DeleteMapping("/{codigo}")
-//	public Categoria excluir (@PathVariable Short codigo) {
-//		Optional<Categoria> categoria = categoriaRepository.findById(codigo);
-//		categoriaRepository.delete(categoria.get());
-//		Categoria categoriaRetorno = categoria.get();
-//		return categoriaRetorno;
-//	}
-//	
-//	@PutMapping
-//	public Categoria editar(@RequestBody Categoria categoria) {
-//		Categoria categoriaEditada =  categoriaRepository.save(categoria);
-//		return categoriaEditada;
-//		
-//	}
+	@PostMapping
+	public Categoria inserir (@RequestBody Categoria categoria) {
+		Categoria categoriaSalva = categoriaService.inserir(categoria);
+		return categoriaSalva;
+	}
+	
+	@DeleteMapping("/{codigo}")
+	public Categoria excluir (@PathVariable Short codigo) {
+		Categoria categoria = categoriaService.excluir(codigo);
+		return categoria;
+	}
+	
+	@PutMapping
+	public Categoria editar(@RequestBody Categoria categoria) {
+		Categoria categoriaEditada =  categoriaService.editar(categoria);
+		return categoriaEditada;
+		
+	}
 }

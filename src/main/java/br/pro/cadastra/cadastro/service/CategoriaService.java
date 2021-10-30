@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import br.pro.cadastra.cadastro.domain.Categoria;
 import br.pro.cadastra.cadastro.exception.RecursoNaoEncontradoException;
@@ -31,8 +33,21 @@ public class CategoriaService {
 		return resultado;
 	}
 	
-//	public Categoria salvar (Categoria categoria) {
-//		Categoria categoriaSalva = categoriaRepository.save(categoria);
-//		return categoriaSalva;
+	public Categoria inserir (Categoria categoria) {
+		Categoria categoriaSalva = categoriaRepository.save(categoria);
+		return categoriaSalva;
+	}
 	
+	public Categoria editar (Categoria categoria) {
+		Categoria categoriaEditada =  categoriaRepository.save(categoria);
+		return categoriaEditada;
+		
+	}
+	
+	public Categoria excluir (Short codigo) {
+		Optional<Categoria> resultado = categoriaRepository.findById(codigo);	
+		Categoria categoria = resultado.get();
+		categoriaRepository.delete(categoria);
+		return categoria;
+	}
 }
